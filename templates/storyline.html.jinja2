@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Storyline - "Some Lost" Demo</title>
+  </head>
+  <body>
+    <h1>"Some Lost" Demo</h1>
+    <h3>By some sophomores in a meme school</h3>
+    <hr>
+    <br>
+    <p>{{ story }}</p>
+
+    {% if btn1_txt %}
+    <a href="{{ btn1_loc }}"><button type="button">{{ btn1_txt }}</button></a>
+    {% endif %}
+
+    {% if btn2_txt %}
+    <a href="{{ btn2_loc }}"><button type="button">{{ btn2_txt }}</button></a>
+    {% endif %}
+
+    {% if btn3_txt %}
+    <a href="{{ btn3_loc }}"><button type="button">{{ btn3_txt }}</button></a>
+    {% endif %}
+
+  </body>
+</html>
