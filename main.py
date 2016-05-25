@@ -1,12 +1,26 @@
-from flask import Flask, render_template, jsonify #imports flask and rendering of the external HTML template files, etc
+from flask import Flask, render_template, jsonify, request #imports flask and rendering of the external HTML template files, etc
 from config import * #This line gets all the variables from config.py file
 from flask.ext.sqlalchemy import SQLAlchemy
 from sqlalchemy import *
 import MySQLdb
+import hmac
+import hashlib
+import subprocess
 app = Flask(__name__)
 
 engine = create_engine('mysql://' + CONFIG_MYSQL_USERNAME + ':' + CONFIG_MYSQL_PASSWORD + '@' + CONFIG_MYSQL_IP + ':' + str(CONFIG_MYSQL_PORT) + '/' + CONFIG_MYSQL_DATABASE)
 connection = engine.connect() #Connects to the mysql database
+
+@app.route("/github-update", methods=["POST"])
+def github_update():
+    h = hmac.new(CONFIG_GITHUB_WEBOOK_SECRET, request.get_data(), hashlib.sha1)
+    if h.hexdigest() != request.headers.get("X-Hub-Signature", "")[5:]:  # A timing attack here is nearly impossible.
+        return "FAIL"
+    try:
+        subprocess.Popen("git pull", shell=True).wait()
+    except OSError:
+        return "ERROR"
+    return "OK"
 
 # This is the home page. aka index :)
 @app.route("/")
