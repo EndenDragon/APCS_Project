@@ -13,7 +13,7 @@ connection = engine.connect() #Connects to the mysql database
 
 @app.route("/github-update", methods=["POST"])
 def github_update():
-    h = hmac.new(CONFIG_GITHUB_WEBOOK_SECRET, request.data(), hashlib.sha1)
+    h = hmac.new(CONFIG_GITHUB_WEBOOK_SECRET, request.data, hashlib.sha1)
     if h.hexdigest() != request.headers.get("X-Hub-Signature", "")[5:]:  # A timing attack here is nearly impossible.
         return "FAIL"
     try:
