@@ -25,7 +25,7 @@ def github_update():
 # This is the home page. aka index :)
 @app.route("/")
 def index():
-    return render_template("test.html.jinja2") #renders index.html.jinja2 from the templates folder
+    return render_template("site.html.jinja2") #renders index.html.jinja2 from the templates folder
 
 @app.route("/storyline/<id>")
 def storyline(id):

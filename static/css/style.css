@@ -1,19 +1,18 @@
-/* line 3, ../../_sass/404.scss */
-#not-found, #not-found body {
+#page, #page body {
   display: table;
   margin: 0;
   padding: 0;
   width: 100%;
   height: 100%;
+  background-color: inherit;
 }
 html {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(http://piskel-imgstore-b.appspot.com/img/7d683d78-21c9-11e6-b866-87f8df2e403c.gif);
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(http://piskel-imgstore-b.appspot.com/img/7d683d78-21c9-11e6-b866-87f8df2e403c.gif) fixed;
   background-repeat: no-repeat;
   background-size: auto 100%;
   background-position: center;
 }
-/* line 11, ../../_sass/404.scss */
-#not-found body {
+#page body {
   position: relative;
   background-image: url(/static/img/404-stripe.png), url(/static/img/404-noise.png);
   background-repeat: repeat-x, repeat;
@@ -28,23 +27,21 @@ html {
   text-shadow: -2px 0 0px rgba(0, 0, 225, 0.4), -1px 0 3px rgba(103, 171, 236, 0.6), 1px 0 4px rgba(69, 112, 204, 0.5);
   animation: skip 7s linear infinite, flicker 0.1s steps(2, start) infinite;
 }
-/* line 26, ../../_sass/404.scss */
-#not-found body #holder {
+#page body #holder {
   display: table-cell;
   vertical-align: bottom;
   max-width: 800px;
   margin: 0 auto;
 }
-/* line 32, ../../_sass/404.scss */
-#not-found body #story {
+#page body #story {
   padding: 10px;
   max-width: 100%;
   display: block;
   white-space: pre;
   line-height: 1.25em;
+  overflow:auto;
 }
-/* line 38, ../../_sass/404.scss */
-#not-found body #story:after {
+#page body #story:after {
   visibility: visible;
   content: '';
   background-color: #d4f8e3;
@@ -57,22 +54,19 @@ html {
   -moz-box-shadow: -2px 0 0px rgba(0, 0, 225, 0.4), -1px 0 3px rgba(103, 171, 236, 0.6), 1px 0 4px rgba(69, 112, 204, 0.5);
   -webkit-box-shadow: -2px 0 0px rgba(0, 0, 225, 0.4), -1px 0 3px rgba(103, 171, 236, 0.6), 1px 0 4px rgba(69, 112, 204, 0.5);
   box-shadow: -2px 0 0px rgba(0, 0, 225, 0.4), -1px 0 3px rgba(103, 171, 236, 0.6), 1px 0 4px rgba(69, 112, 204, 0.5);
-  -moz-animation: flicker 0.1s steps(2, start) infinite, ready 1s steps(2, start) 25s infinite;
-  -webkit-animation: flicker 0.1s steps(2, start) infinite, ready 1s steps(2, start) 25s infinite;
-  animation: flicker 0.1s steps(2, start) infinite, ready 1s steps(2, start) 25s infinite;
+  /*-moz-animation: flicker 0.1s steps(2, start) infinite, ready 1s steps(2, start) 1s infinite;
+  -webkit-animation: flicker 0.1s steps(2, start) infinite, ready 1s steps(2, start) 1s infinite;
+  animation: flicker 0.1s steps(2, start) infinite, ready 1s steps(2, start) 1s infinite;*/
 }
-/* line 52, ../../_sass/404.scss */
-#not-found body #kick {
+#page body #kick {
   text-shadow: none;
   margin: 10px;
 }
-/* line 55, ../../_sass/404.scss */
-#not-found body #kick a {
+#page body #kick a {
   background-color: #d4f8e3;
   color: #1d2b2a;
 }
-/* line 61, ../../_sass/404.scss */
-#not-found body .typed-cursor {
+#page body .typed-cursor {
   display: none;
 }
 
@@ -122,8 +116,7 @@ html {
   }
 }
 @media screen and (max-width: 400px) {
-  /* line 84, ../../_sass/404.scss */
-  #not-found body {
+  #page body {
     font-size: 18px;
   }
 }
