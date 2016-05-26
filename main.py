@@ -7,6 +7,7 @@ import hmac
 import hashlib
 import subprocess
 import os
+
 app = Flask(__name__)
 os.chdir(os.path.dirname(os.path.realpath(__file__)))
 
