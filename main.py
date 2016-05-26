@@ -6,7 +6,9 @@ import MySQLdb
 import hmac
 import hashlib
 import subprocess
+import os
 app = Flask(__name__)
+os.chdir(os.path.dirname(os.path.realpath(__file__)))
 
 engine = create_engine('mysql://' + CONFIG_MYSQL_USERNAME + ':' + CONFIG_MYSQL_PASSWORD + '@' + CONFIG_MYSQL_IP + ':' + str(CONFIG_MYSQL_PORT) + '/' + CONFIG_MYSQL_DATABASE)
 connection = engine.connect() #Connects to the mysql database
