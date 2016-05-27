@@ -14,7 +14,7 @@ html {
 }
 #page body {
   position: relative;
-  background-image: url(/static/img/404-stripe.png), url(/static/img/404-noise.png);
+  background-image: url(/static/img/effect-stripe.png), url(/static/img/effect-noise.png);
   background-repeat: repeat-x, repeat;
   background-position: 0 0%;
   background-attachment: fixed;
