@@ -44,8 +44,9 @@ def storyline(id):
         btn3_loc = str(x["btn3_loc"])
         quicktimeplayer_enabled = str(x["quicktimeplayer_enabled"])
         quicktimeplayer_seconds = str(x["quicktimeplayer_seconds"])
+        quicktimeplayer_nextoption = str(x["quicktimeplayer_nextoption"])
         bgimg = str(x["bgimg"])
-    return jsonify(story=story, btn1_txt=btn1_txt, btn1_loc=btn1_loc, btn2_txt=btn2_txt, btn2_loc=btn2_loc, btn3_txt=btn3_txt, btn3_loc=btn3_loc, quicktimeplayer_enabled=quicktimeplayer_enabled, quicktimeplayer_seconds=quicktimeplayer_seconds, bgimg=bgimg)
+    return jsonify(story=story, btn1_txt=btn1_txt, btn1_loc=btn1_loc, btn2_txt=btn2_txt, btn2_loc=btn2_loc, btn3_txt=btn3_txt, btn3_loc=btn3_loc, quicktimeplayer_enabled=quicktimeplayer_enabled, quicktimeplayer_seconds=quicktimeplayer_seconds, quicktimeplayer_nextoption=quicktimeplayer_nextoption, bgimg=bgimg)
 
 # basically this if statement below says, if you run this file DIRECTLY, then anything in the if statement runs. Used for debug purpouses only
 # as we do not want flask's development modules to be running on pythonanywhere (or other deployed environments), or people would see our code, and
