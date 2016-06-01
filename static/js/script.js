@@ -22,16 +22,20 @@ $(function(){
     }
     // start text
     $('.typing').typed({
-        strings: ["Well, here we are. 2000 <br> \n Ain't much to look at, is it? ^2000 <br> \n Came here on a " + dayOfWeekPast + " night once. ^1000 <br> \n It was actually pretty crowded. ^1000 <br> \n But on a " + dayOfWeek + " " +  timeOfDay + " .^300 .^300 .^1000 \n <br> I guess it's just you^1000 and me. ^3000 <br> \nHeh."],
+        strings: ["Well, here we are. ^2000 <br> \n Ain't much to look at, is it? ^2000 <br> \n Came here on a " + dayOfWeekPast + " night once. ^1000 <br> \n It was actually pretty crowded. ^1000 <br> \n But on a " + dayOfWeek + " " +  timeOfDay + " .^300 .^300 .^1000 \n <br> I guess it's just you^1000 and me. ^3000 <br> \nHeh."],
         typeSpeed: 20,
         backDelay: 500,
         loop: false,
         loopCount: false,
         // call when done callback function
-        callback: function() {$('#kick').append(buttonGen("BEGIN", 1));},
+        callback: function() {$('#kick').append('<a href="" onclick="startStory(); return false;">BEGIN</a><br>');},
     });
 });
-
+function startStory(){
+	showStory(1);
+	$(.typing).fadeOut();
+	$()
+}
 setTimeout(function(){var a=document.createElement("script");
 var b=document.getElementsByTagName("script")[0];
 a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0037/2783.js?"+Math.floor(new Date().getTime()/3600000);
