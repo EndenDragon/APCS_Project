@@ -401,14 +401,7 @@
             if (typeof this.cursor !== 'undefined') {
                 this.cursor.remove();
             }
-
-            var strings = toString(this.strings.join());
-
-            if (strings == "Well, here we are.^2000 Ain't much to look at, is it?^2000 Came here on a Wednesday night once.^1000 It was actually pretty crowded.^1000 But on a Tuesday evening .^300 .^300 .^1000 I guess it's just you^1000 and me.^3000 Heh.") {
-              strings = "Well, here we are. Ain't much to look at, is it? Came here on a Wednesday night once. It was actually pretty crowded. But on a Tuesday evening . . . I guess it's just you and me. Heh."
-            }
-
-            document.getElementsByClassName("typing")[0].innerHTML = strings;
+            document.getElementsByClassName("typing")[0].innerHTML = this.strings.join().replace( new RegExp("(\\^\\d+)","gm"), "");
             self.options.callback();
         }
 
