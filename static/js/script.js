@@ -38,7 +38,7 @@ a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0037/2783.
 a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
 
 function showStory(int) {
-
+	clearTimeout();
   var currentDomain = window.location.protocol + "//" + window.location.host + "/";
   $.getJSON(currentDomain + "storyline/" + int, function(data) {
     var buttonElements = document.getElementById("kick");
@@ -53,6 +53,9 @@ function showStory(int) {
         loopCount: false,
         callback: showButtons(data["btn1_txt"], data["btn1_loc"], data["btn2_txt"], data["btn2_loc"], data["btn3_txt"], data["btn3_loc"]),
     });
+	if (data["quicktimeplayer_enabled"] == 1) {
+		setTimeout(showStory(int + 1), data["quicktimeplayer_seconds"] * 1000);
+	}
     $('html, body').animate({
         scrollTop: $("#bottom").offset().top
     }, 1);
