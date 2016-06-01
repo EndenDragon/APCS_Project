@@ -73,3 +73,11 @@ function showButtons(btn1_txt, btn1_loc, btn2_txt, btn2_loc, btn3_txt, btn3_loc)
 function buttonGen(text, loc) {
   return '<a href="" onclick="showStory(' + loc + '); return false;">' + text + '</a><br>'
 }
+
+//Traps the enter key (13) and simulates a button click on the first link it querys up
+$(document).keypress(function(event){
+    var keycode = (event.keyCode ? event.keyCode : event.which);
+    if(keycode == '13'){
+      $(".typing").typed('instaPrint');
+    }
+});

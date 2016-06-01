@@ -37,7 +37,6 @@ html {
   padding: 10px;
   max-width: 100%;
   display: block;
-  white-space: pre;
   line-height: 1.25em;
   overflow:auto;
 }

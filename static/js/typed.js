@@ -377,19 +377,32 @@
         ,
         nextLine: function() {
             var self = this;
-
             self.stop = true;
             clearInterval(self.timeout);
 
             if (typeof this.cursor !== 'undefined') {
                 this.cursor.remove();
             }
+            document.getElementsByClassName("typing")[0].innerHTML = this.strings.join();
             document.getElementsByClassName("typing")[0].className = "";
             var element = document.createElement("span");
             element.setAttribute("class", "typing");
             var brelement = document.createElement("br");
             document.getElementById('story').appendChild(brelement);
+            document.getElementById('story').appendChild(document.createElement("br"));
             document.getElementById('story').appendChild(element);
+        }
+        ,
+        instaPrint: function() {
+            var self = this;
+            self.stop = true;
+            clearInterval(self.timeout);
+
+            if (typeof this.cursor !== 'undefined') {
+                this.cursor.remove();
+            }
+            document.getElementsByClassName("typing")[0].innerHTML = this.strings.join();
+            self.options.callback();
         }
 
     };
