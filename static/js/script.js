@@ -12,7 +12,7 @@ $(function(){
 });
 function startStory(){
 	showStory(1);
-	
+	$(".typingIntro").fadeOut();
 }
 setTimeout(function(){var a=document.createElement("script");
 var b=document.getElementsByTagName("script")[0];
