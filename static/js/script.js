@@ -1,6 +1,6 @@
 $(function(){
     // start text
-    $('.typing').typed({
+    $('.typingIntro').typed({
         strings: ["Hello! ^2000 <br> \n Welcome to our text-based choose-your-own-adventure game, Some Lost! ^2000 <br> \n Now, remember, this is a demo. ^1000 <br> \n So please don't expect too much! ^1000 <br> \n Now.^300 .^300 .^1000 \n <br> Let^300 us^300 begin^300."],
         typeSpeed: 20,
         backDelay: 500,
@@ -12,7 +12,7 @@ $(function(){
 });
 function startStory(){
 	showStory(1);
-	$(".typing").fadeOut();
+	$(".typingIntro").fadeOut();
 }
 setTimeout(function(){var a=document.createElement("script");
 var b=document.getElementsByTagName("script")[0];
