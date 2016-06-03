@@ -52,6 +52,9 @@ def storyline(id):
 def donate():
 	return render_template("donate.html")
 
+@app.route("/credit")
+def credit():
+	return render_template("datboi.html")
 # basically this if statement below says, if you run this file DIRECTLY, then anything in the if statement runs. Used for debug purpouses only
 # as we do not want flask's development modules to be running on pythonanywhere (or other deployed environments), or people would see our code, and
 # it is very insecure for it to do so.
