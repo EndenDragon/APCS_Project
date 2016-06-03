@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<html>
+<img src="startScene.gif">
+<center><h1>End of demo,thank you very much.</h1></center>
+<center><h1>Team members:</h1></center>
+<center><h2>HTML design/ building:</h2></center>
+<center><h3>Adrian Unruh</h3></center>
+<center><font color="white" this is white.</font> <h3>Chuwei Guo</h3></center>
+<center><h3>Jeremy Zhang</h3></center>
+<center><h3>Kevin Kim</h3></center>
+<center><h2>StoryLine building:</h2></center>
+<center><h3>Michelle Lin</h3></center>
+<center><h3>Chuwei & Adrian</h3></center>
+<center><h2>Pixel Art:</h2></center>
+<center><h3>Kevin Kim</h3></center>
+<center><font color="black" this is black.</font><h3>Michelle Lin</h3></center>
+</html>
+
+
+
+	
+</body>
+</html>
