@@ -1,28 +1,7 @@
 $(function(){
-    var weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-    var dayOfWeekIndex = (new Date()).getDay();
-    var dayOfWeek = weekdays[dayOfWeekIndex];
-    var dayOfWeekPastIndex = Math.floor(weekdays.length * Math.random());
-    var dayOfWeekPast;
-    var hourOfDay = new Date().getHours();
-    var timeOfDay;
-    // choose day of week other than current one
-    if (dayOfWeekPastIndex == dayOfWeekIndex) {
-      dayOfWeekPast = weekdays[(dayOfWeekPastIndex + 1) % weekdays.length];
-    } else {
-      dayOfWeekPast = weekdays[dayOfWeekPastIndex];
-    }
-    // assign time of day to the hour
-    if ((hourOfDay >= 4) && (hourOfDay <= 11)) {
-      timeOfDay = "morning";
-    } else if ((hourOfDay >= 12) && (hourOfDay <= 16)) {
-      timeOfDay = "afternoon";
-    } else {
-      timeOfDay = "evening";
-    }
     // start text
     $('.typing').typed({
-        strings: ["Well, here we are. ^2000 <br> \n Ain't much to look at, is it? ^2000 <br> \n Came here on a " + dayOfWeekPast + " night once. ^1000 <br> \n It was actually pretty crowded. ^1000 <br> \n But on a " + dayOfWeek + " " +  timeOfDay + " .^300 .^300 .^1000 \n <br> I guess it's just you^1000 and me. ^3000 <br> \nHeh."],
+        strings: ["Hello! ^2000 <br> \n Welcome to our text-based choose-your-own-adventure game, Some Lost! ^2000 <br> \n Now, remember, this is a demo. ^1000 <br> \n So please don't expect too much! ^1000 <br> \n Now.^300 .^300 .^1000 \n <br> Let^300 us^300 begin^300."],
         typeSpeed: 20,
         backDelay: 500,
         loop: false,
