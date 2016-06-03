@@ -1,7 +1,7 @@
 $(function(){
     // start text
     $('.typing').typed({
-        strings: ["Hello! ^2000 <br> \n Welcome to our text-based choose-your-own-adventure, Some Lost! ^2000 <br> \n Now, remember, this is a demo. ^1000 <br> \n So please don't expect too much! ^1000 <br> \n Now.^300 .^300 .^1000 \n <br> Let^300 us^300 begin^300."],
+        strings: ["Hello! ^2000 <br> \n Welcome to our text-based choose-your-own-adventure game, Some Lost! ^2000 <br> \n Now, remember, this is a demo. ^1000 <br> \n So please don't expect too much! ^1000 <br> \n Now.^300 .^300 .^1000 \n <br> Let^300 us^300 begin^300."],
         typeSpeed: 20,
         backDelay: 500,
         loop: false,
