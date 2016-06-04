@@ -25,7 +25,9 @@ function showStory(int) {
   $.getJSON(currentDomain + "storyline/" + int, function(data) {
     var buttonElements = document.getElementById("kick");
     buttonElements.innerHTML = '';
-    $(".typing").typed('nextLine');
+    if (int != 1) {
+      $(".typing").typed('nextLine');
+    } //Row 1 is the beginning of the story, we dont need to have it make a new line for us.
 
     $('.typing').typed({
         strings: [data["story"]],
