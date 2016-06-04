@@ -19,6 +19,7 @@ function startStory(){
 }
 
 function showStory(int) {
+  console.log("Show story: " + int);
 	clearTimeout();
   var currentDomain = window.location.protocol + "//" + window.location.host + "/";
   $.getJSON(currentDomain + "storyline/" + int, function(data) {
@@ -60,15 +61,28 @@ function buttonGen(text, loc) {
   return '<a href="" onclick="showStory(' + loc + '); return false;">' + text + '</a><br>'
 }
 
-//Traps the enter key (13) and simulates a button click on the first link it querys up
 $(document).keypress(function(event){
     var keycode = (event.keyCode ? event.keyCode : event.which);
-    if(keycode == '13'){
+    if(keycode == '13'){ //Traps the enter key (13) and simulates a button click on the first link it querys up
       if (isIntroPlaying) {
         $(".typingIntro").typed('instaPrint');
       }
       else {
         $(".typing").typed('instaPrint');
+      }
+    }
+    if (keycode == '76') { //If "L" key pressed
+      var loc = prompt("Enter a location");
+      loc = parseInt(loc);
+      if (loc != null) {
+        if (isIntroPlaying) {
+          $(".typingIntro").typed('instaPrint');
+          startStory();
+          showStory(loc);
+        } else {
+          $(".typing").typed('instaPrint');
+          showStory(loc);
+        }
       }
     }
 });
