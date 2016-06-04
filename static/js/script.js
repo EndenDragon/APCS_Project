@@ -81,7 +81,7 @@ $(document).keypress(function(event){
           showStory(loc);
         } else {
           $(".typing").typed('instaPrint');
-          if (int == 1) {
+          if (loc == 1) {
             $(".typing").typed('nextLine');
           }
           showStory(loc);
