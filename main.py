@@ -1,3 +1,10 @@
+##################
+# WARNING:
+# IF YOU EDIT THIS FILE (AND ANY OTHER PYTHON FILES THAT END WITH .py) AND PUSH IT TO GITHUB, PLEASE TELL JEREMY TO RECOMPILE THE PYTHON FROM THE SERVER- PYTHONANYWHERE
+# OR ELSE THE CHANGES WILL NOT TAKE EFFECT UNTIL THE NEXT SERVER RELOAD!
+# Sorry for any inconveniences, but I will mostily be on Facebook if you want me :)
+##################
+
 from flask import Flask, render_template, jsonify, request #imports flask and rendering of the external HTML template files, etc
 from config import * #This line gets all the variables from config.py file
 from flask.ext.sqlalchemy import SQLAlchemy
