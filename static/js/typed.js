@@ -401,7 +401,12 @@
             if (typeof this.cursor !== 'undefined') {
                 this.cursor.remove();
             }
-            //document.getElementsByClassName("typing")[0].innerHTML = this.strings.join().replace( new RegExp("(\\^\\d+)","gm"), "");
+            if (isIntroPlaying) {
+              document.getElementsByClassName("typingIntro")[0].innerHTML = this.strings.join().replace( new RegExp("(\\^\\d+)","gm"), "");
+            }
+            else {
+              document.getElementsByClassName("typing")[0].innerHTML = this.strings.join().replace( new RegExp("(\\^\\d+)","gm"), "");
+            }
             self.options.callback();
         }
 
