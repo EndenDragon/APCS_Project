@@ -1,3 +1,5 @@
+var isIntroPlaying = true; //This variable shows weather the intro is currently playing or has the player clicked the begin button.
+
 $(function(){
     // start text
     $('.typingIntro').typed({
@@ -13,11 +15,8 @@ $(function(){
 function startStory(){
   $(".typingIntro").fadeOut();
 	showStory(1);
+  isIntroPlaying = false;
 }
-setTimeout(function(){var a=document.createElement("script");
-var b=document.getElementsByTagName("script")[0];
-a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0037/2783.js?"+Math.floor(new Date().getTime()/3600000);
-a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
 
 function showStory(int) {
 	clearTimeout();
@@ -65,6 +64,11 @@ function buttonGen(text, loc) {
 $(document).keypress(function(event){
     var keycode = (event.keyCode ? event.keyCode : event.which);
     if(keycode == '13'){
-      $(".typing").typed('instaPrint');
+      if (isIntroPlaying) {
+        $(".typingIntro").typed('instaPrint');
+      }
+      else {
+        $(".typing").typed('instaPrint');
+      }
     }
 });
