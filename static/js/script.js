@@ -4,7 +4,7 @@ $(function(){
     // start text
     $('.typingIntro').typed({
         strings: ["Hello! ^2000 <br> \n Welcome to our text-based choose-your-own-adventure game, Some Lost! ^2000 <br> \n Now, remember, this is a demo. ^1000 <br> \n So please don't expect too much! ^1000 <br> \n Now.^300 .^300 .^1000 \n <br> Let^300 us^300 begin^300."],
-        typeSpeed: 20,
+        typeSpeed: 30,
         backDelay: 500,
         loop: false,
         loopCount: false,
@@ -30,7 +30,7 @@ function showStory(int) {
 
     $('.typing').typed({
         strings: [data["story"]],
-        typeSpeed: 20,
+        typeSpeed: 30,
         backDelay: 500,
         loop: false,
         loopCount: false,
