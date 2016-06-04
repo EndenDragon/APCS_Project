@@ -63,7 +63,7 @@ function buttonGen(text, loc) {
 
 $(document).keypress(function(event){
     var keycode = (event.keyCode ? event.keyCode : event.which);
-    if(keycode == '13'){ //Traps the enter key (13) and simulates a button click on the first link it querys up
+    if(keycode == '13'){ //Traps the enter key (13) and instant prints the rest
       if (isIntroPlaying) {
         $(".typingIntro").typed('instaPrint');
       }
