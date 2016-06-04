@@ -11,8 +11,8 @@ $(function(){
     });
 });
 function startStory(){
+  $(".typingIntro").fadeOut();
 	showStory(1);
-	$(".typingIntro").fadeOut();
 }
 setTimeout(function(){var a=document.createElement("script");
 var b=document.getElementsByTagName("script")[0];
@@ -26,7 +26,7 @@ function showStory(int) {
     var buttonElements = document.getElementById("kick");
     buttonElements.innerHTML = '';
     $(".typing").typed('nextLine');
-	
+
     $('.typing').typed({
         strings: [data["story"]],
         typeSpeed: 20,
@@ -36,7 +36,7 @@ function showStory(int) {
         callback: showButtons(data["btn1_txt"], data["btn1_loc"], data["btn2_txt"], data["btn2_loc"], data["btn3_txt"], data["btn3_loc"]),
     });
 	if (data["quicktimeplayer_enabled"] == 1) {
-		setTimeout(showStory(int + 1), data["quicktimeplayer_seconds"] * 1000);
+		setTimeout(showStory(int + 1), data["quicktimeplayer_seconds"] * 1000); //TODO: Edit MySQL Database so it would go to the proper next row (Instead of the assumed next row) if the player didnt press it in time.
 	}
     $('html, body').animate({
         scrollTop: $("#bottom").offset().top
