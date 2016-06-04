@@ -74,7 +74,7 @@ $(document).keypress(function(event){
     if (keycode == '76') { //If "L" key pressed
       var loc = prompt("Enter a location");
       loc = parseInt(loc);
-      if (loc != null) {
+      if (loc != NaN) {
         if (isIntroPlaying) {
           $(".typingIntro").typed('instaPrint');
           startStory();
