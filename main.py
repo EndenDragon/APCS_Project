@@ -40,8 +40,11 @@ def index():
 @app.route("/storyline/<id>") #Javascript should visit this page and get the mysql data. The ID will be passed in from the header of the browser/JS. And the ID will correspond with the row in the DB.
 def storyline(id): #Now take in the ID in the definition
     query = """SELECT * FROM storyline WHERE id ='{0}'""".format(id) #gets the row with the ID in the database
-    connection = engine.connect() #Try and connect to mysql
-    mysql = connection.execute(query) #Executes in the database
+    try:
+        mysql = connection.execute(query) #Try and executes in the database
+    except Exception as e: #If execution fails...
+        connection = engine.connect() #Try and connect to mysql
+        mysql = connection.execute(query) #Then Executes in the database again
     for x in mysql: #For each row returned from the database...
         story = str(x["story"]) #Set them in a variable
         btn1_txt = x["btn1_txt"]
