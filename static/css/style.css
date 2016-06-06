@@ -1,5 +1,6 @@
 #page #intro {
-	margin: 50px 10px;
+	margin-left; 10px;
+	display: block;
 }
 #page, #page body {
   display: table;
