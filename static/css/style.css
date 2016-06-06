@@ -1,3 +1,6 @@
+#page intro {
+	padding: 10px;
+}
 #page, #page body {
   display: table;
   margin: 0px 0px 0px 0px;
