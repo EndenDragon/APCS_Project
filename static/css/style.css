@@ -63,7 +63,7 @@ html {
 }
 #page body #kick {
   text-shadow: none;
-  margin: 10;
+  margin: 10px;
 }
 #page body #kick a {
   background-color: #d4f8e3;
