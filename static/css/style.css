@@ -1,5 +1,6 @@
 #page #intro {
-	margin: 50px 10px;
+	margin-left: 10px;
+	display: block;
 }
 #page, #page body {
   display: table;
@@ -52,7 +53,7 @@ html {
   width: 0.5em;
   height: 1em;
   top: 5px;
-  margin-left: 100px;
+  margin-left: 0px;
   -moz-box-shadow: -2px 0 0px rgba(0, 0, 225, 0.4), -1px 0 3px rgba(103, 171, 236, 0.6), 1px 0 4px rgba(69, 112, 204, 0.5);
   -webkit-box-shadow: -2px 0 0px rgba(0, 0, 225, 0.4), -1px 0 3px rgba(103, 171, 236, 0.6), 1px 0 4px rgba(69, 112, 204, 0.5);
   box-shadow: -2px 0 0px rgba(0, 0, 225, 0.4), -1px 0 3px rgba(103, 171, 236, 0.6), 1px 0 4px rgba(69, 112, 204, 0.5);
@@ -62,7 +63,7 @@ html {
 }
 #page body #kick {
   text-shadow: none;
-  margin: 10;
+  margin: 10px;
 }
 #page body #kick a {
   background-color: #d4f8e3;
