@@ -38,7 +38,7 @@ function showStory(int) {
     });
 	
 	setTimeout(function(){
-		showStory(i + 1)
+		showStory(int + 1)
 	}, 5000);
 	
 		 //TODO: Edit MySQL Database so it would go to the proper next row (Instead of the assumed next row) if the player didnt press it in time.
