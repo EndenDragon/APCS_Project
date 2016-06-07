@@ -41,8 +41,8 @@ html {
 #page body #story {
   padding: 10px;
   max-width: 100%;
-  max-height: 100%
-  display: block !important;
+  max-height: 100%;
+  display: block;
   line-height: 1.25em;
   overflow:auto;
 }
