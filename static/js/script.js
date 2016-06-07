@@ -19,6 +19,7 @@ function startStory(){
 }
 
 function showStory(int) {
+  console.log("Show story: " + int);
   var currentDomain = window.location.protocol + "//" + window.location.host + "/";
   $.ajax({
     url: currentDomain + "storyline/" + int,
@@ -38,7 +39,7 @@ function showStory(int) {
           loopCount: false,
           callback: showButtons(data["btn1_txt"], data["btn1_loc"], data["btn2_txt"], data["btn2_loc"], data["btn3_txt"], data["btn3_loc"]),
       });
-  	
+
   	if (data["quicktimeplayer_enabled"] == 1) {
   		setTimeout(function(){
   			showStory(data["quicktimeplayer_nextoption"]);
