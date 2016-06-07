@@ -36,9 +36,9 @@ function showStory(int) {
         loopCount: false,
         callback: showButtons(data["btn1_txt"], data["btn1_loc"], data["btn2_txt"], data["btn2_loc"], data["btn3_txt"], data["btn3_loc"]),
     });
-	if (data["quicktimeplayer_enabled"] == 1) {
-		setTimeout(showStory(int + 1), data["quicktimeplayer_seconds"] * 1000); //TODO: Edit MySQL Database so it would go to the proper next row (Instead of the assumed next row) if the player didnt press it in time.
-	}
+	
+		setTimeout(showStory(int + 1), 5000); //TODO: Edit MySQL Database so it would go to the proper next row (Instead of the assumed next row) if the player didnt press it in time.
+	
     $('html, body').animate({
         scrollTop: $("#bottom").offset().top
     }, 1);
