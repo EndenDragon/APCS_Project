@@ -20,7 +20,6 @@ function startStory(){
 
 function showStory(int) {
   console.log("Show story: " + int);
-	clearTimeout();
   var currentDomain = window.location.protocol + "//" + window.location.host + "/";
   $.getJSON(currentDomain + "storyline/" + int, function(data) {
     var buttonElements = document.getElementById("kick");
