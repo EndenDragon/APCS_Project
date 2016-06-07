@@ -37,11 +37,14 @@ function showStory(int) {
         callback: showButtons(data["btn1_txt"], data["btn1_loc"], data["btn2_txt"], data["btn2_loc"], data["btn3_txt"], data["btn3_loc"]),
     });
 	
-		setTimeout(showStory(int + 1), 5000); //TODO: Edit MySQL Database so it would go to the proper next row (Instead of the assumed next row) if the player didnt press it in time.
+	if (data["quicktimeplayer_enabled"] == 1) {
+		setTimeout(function(){
+			showStory(int + 1)
+		}, 15000);
+	}
+		 //TODO: Edit MySQL Database so it would go to the proper next row (Instead of the assumed next row) if the player didnt press it in time.
 	
-    $('html, body').animate({
-        scrollTop: $("#bottom").offset().top
-    }, 1);
+    
   });
 }
 function showButtons(btn1_txt, btn1_loc, btn2_txt, btn2_loc, btn3_txt, btn3_loc) {
