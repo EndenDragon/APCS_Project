@@ -39,8 +39,8 @@ function showStory(int) {
 	
 	if (data["quicktimeplayer_enabled"] == 1) {
 		setTimeout(function(){
-			showStory(int + 1)
-		}, 15000);
+			showStory(data["quicktimeplayer_nextoption"]);
+		}, data["quicktimeplayer_seconds"] * 1000);
 	}
 		 //TODO: Edit MySQL Database so it would go to the proper next row (Instead of the assumed next row) if the player didnt press it in time.
 	
