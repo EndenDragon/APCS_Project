@@ -1,4 +1,5 @@
 var isIntroPlaying = true; //This variable shows weather the intro is currently playing or has the player clicked the begin button.
+var quickTime; //Initialize Quicktime as a global variable
 
 $(function(){
     // start text
@@ -19,6 +20,7 @@ function startStory(){
 }
 
 function showStory(int) {
+  clearTimeout(quickTime);
   console.log("Show story: " + int);
   var currentDomain = window.location.protocol + "//" + window.location.host + "/";
   $.ajax({
@@ -41,7 +43,7 @@ function showStory(int) {
       });
 
   	if (data["quicktimeplayer_enabled"] == 1) {
-  		setTimeout(function(){
+  		quickTime = setTimeout(function(){
   			showStory(data["quicktimeplayer_nextoption"]);
   		}, data["quicktimeplayer_seconds"] * 1000);
   	}
@@ -49,7 +51,7 @@ function showStory(int) {
 
     },
     error: function( data ) {
-      showStory(int);
+      showStory(int); //Recursive, being that it runs the function again if there is an error at getting the url (We all LOVE school wifi!).
     }
   });
 }
