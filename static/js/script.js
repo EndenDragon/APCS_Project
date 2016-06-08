@@ -1,5 +1,8 @@
 var isIntroPlaying = true; //This variable shows weather the intro is currently playing or has the player clicked the begin button.
 var quickTime; //Initialize Quicktime as a global variable
+var currentBackground = "no_image.png"; //Default background to load at the start of the page load
+
+document.documentElement.style.background = backgroundCSSGen(currentBackground); //gets the <html> tag and set the background
 
 $(function(){
     // start text
@@ -13,6 +16,7 @@ $(function(){
         callback: function() {$('#kick').append('<a href="" onclick="startStory(); return false;">BEGIN</a><br>');},
     });
 });
+
 function startStory(){
   $(".typingIntro").fadeOut();
 	showStory(1);
@@ -29,6 +33,7 @@ function showStory(int) {
     success: function( data ) {
       var buttonElements = document.getElementById("kick");
       buttonElements.innerHTML = '';
+      document.documentElement.style.background = backgroundCSSGen(data["bgimg"]);
       if (int != 1) {
         $(".typing").typed('nextLine');
       } //Row 1 is the beginning of the story, we dont need to have it make a new line for us.
@@ -41,14 +46,11 @@ function showStory(int) {
           loopCount: false,
           callback: showButtons(data["btn1_txt"], data["btn1_loc"], data["btn2_txt"], data["btn2_loc"], data["btn3_txt"], data["btn3_loc"]),
       });
-
-  	if (data["quicktimeplayer_enabled"] == 1) {
-  		quickTime = setTimeout(function(){
-  			showStory(data["quicktimeplayer_nextoption"]);
-  		}, data["quicktimeplayer_seconds"] * 1000);
-  	}
-  		 //TODO: Edit MySQL Database so it would go to the proper next row (Instead of the assumed next row) if the player didnt press it in time.
-
+  	  if (data["quicktimeplayer_enabled"] == 1) {
+  		  quickTime = setTimeout(function(){
+  			     showStory(data["quicktimeplayer_nextoption"]);
+  		  }, data["quicktimeplayer_seconds"] * 1000);
+  	  }
     },
     error: function( data ) {
       showStory(int); //Recursive, being that it runs the function again if there is an error at getting the url (We all LOVE school wifi!).
@@ -70,6 +72,13 @@ function showButtons(btn1_txt, btn1_loc, btn2_txt, btn2_loc, btn3_txt, btn3_loc)
 
 function buttonGen(text, loc) {
   return '<a href="" onclick="showStory(' + loc + '); return false;">' + text + '</a><br>'
+}
+
+function backgroundCSSGen(fileName) {
+  if (fileName == "no_image.png") {
+    fileName = "intro1.gif"; //default image for "blank" background in the database
+  }
+  return 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/static/bg/' + fileName + ') fixed !important'
 }
 
 $(document).keypress(function(event){
