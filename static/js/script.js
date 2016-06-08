@@ -47,9 +47,9 @@ function showStory(int) {
           callback: showButtons(data["btn1_txt"], data["btn1_loc"], data["btn2_txt"], data["btn2_loc"], data["btn3_txt"], data["btn3_loc"]),
       });
   	  if (data["quicktimeplayer_enabled"] == 1) {
+        alert("Oh no! I sense a QUICKTIME is coming! You have " + data["quicktimeplayer_seconds"] + " second(s) to act upon your decision!");
   		  quickTime = setTimeout(function(){
   			     showStory(data["quicktimeplayer_nextoption"]);
-             alert("Oh no! I sense a QUICKTIME is coming! You have " + data["quicktimeplayer_seconds"] + " second(s) to act upon your decision!");
   		  }, data["quicktimeplayer_seconds"] * 1000);
   	  }
     },
