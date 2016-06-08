@@ -44,7 +44,6 @@ html {
   max-height: 100%;
   display: block;
   line-height: 1.25em;
-  overflow:auto;
 }
 #page body #story:after {
   visibility: visible;
