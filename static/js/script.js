@@ -1,6 +1,6 @@
 var isIntroPlaying = true; //This variable shows weather the intro is currently playing or has the player clicked the begin button.
 var quickTime; //Initialize Quicktime as a global variable
-var currentBackground = "no_image.png"; //Default background to load at the start of the page load
+var currentBackground = "intro1.gif"; //Default background to load at the start of the page load
 
 document.documentElement.style.background = backgroundCSSGen(currentBackground); //gets the <html> tag and set the background
 
@@ -34,6 +34,7 @@ function showStory(int) {
       var buttonElements = document.getElementById("kick");
       buttonElements.innerHTML = '';
       document.documentElement.style.background = backgroundCSSGen(data["bgimg"]);
+      currentBackground = data["bgimg"];
       if (int != 1) {
         $(".typing").typed('nextLine');
       } //Row 1 is the beginning of the story, we dont need to have it make a new line for us.
@@ -77,7 +78,7 @@ function buttonGen(text, loc) {
 
 function backgroundCSSGen(fileName) {
   if (fileName == "no_image.png") {
-    fileName = "intro1.gif"; //default image for "blank" background in the database
+    fileName = currentBackground; //no image = no change?
   }
   return 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/static/bg/' + fileName + ') fixed'
 }
