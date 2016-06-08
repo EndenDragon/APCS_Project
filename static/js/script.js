@@ -34,7 +34,9 @@ function showStory(int) {
       var buttonElements = document.getElementById("kick");
       buttonElements.innerHTML = '';
       document.documentElement.style.background = backgroundCSSGen(data["bgimg"]);
-      currentBackground = data["bgimg"];
+      if (data["bgimg" != "no_image.png"]) {
+        currentBackground = data["bgimg"];
+      }
       if (int != 1) {
         $(".typing").typed('nextLine');
       } //Row 1 is the beginning of the story, we dont need to have it make a new line for us.
