@@ -49,6 +49,7 @@ function showStory(int) {
   	  if (data["quicktimeplayer_enabled"] == 1) {
   		  quickTime = setTimeout(function(){
   			     showStory(data["quicktimeplayer_nextoption"]);
+             alert("Oh no! I sense a QUICKTIME is coming! You have " + data["quicktimeplayer_seconds"] + " second(s) to act upon your decision!");
   		  }, data["quicktimeplayer_seconds"] * 1000);
   	  }
     },
