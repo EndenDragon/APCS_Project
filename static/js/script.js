@@ -78,7 +78,7 @@ function backgroundCSSGen(fileName) {
   if (fileName == "no_image.png") {
     fileName = "intro1.gif"; //default image for "blank" background in the database
   }
-  return 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/static/bg/' + fileName + ') fixed !important'
+  return 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/static/bg/' + fileName + ') fixed'
 }
 
 $(document).keypress(function(event){
