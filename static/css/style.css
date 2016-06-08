@@ -12,9 +12,9 @@
 }
 html {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(http://piskel-imgstore-b.appspot.com/img/7d683d78-21c9-11e6-b866-87f8df2e403c.gif) fixed;
-  background-repeat: no-repeat;
-  background-size: 1275px 1000px;
-  background-position: center;
+  background-repeat: no-repeat !important;
+  background-size: auto 100% !important;
+  background-position: center !important;
 }
 #page body {
   position: relative;
@@ -41,10 +41,9 @@ html {
 #page body #story {
   padding: 10px;
   max-width: 100%;
-  max-height: 100%
+  max-height: 100%;
   display: block;
   line-height: 1.25em;
-  overflow:auto;
 }
 #page body #story:after {
   visibility: visible;
